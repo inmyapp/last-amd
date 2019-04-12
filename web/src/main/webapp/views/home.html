@@ -1,0 +1,41 @@
+<div ng-header></div>
+<div ng-nav></div>
+
+Hello {{greetMe}}!
+			<div class="panel-body">
+
+				<form class="col-md-12" ng-submit="saveEmployee()">
+				
+					<div class="form-group">
+						<label class="control-label col-md-1 col-sm-1 col-xs-12">Type
+							<sup><i class="glyph-icon icon-asterisk font-red font-size-10 "></i></sup>
+						</label>
+						<div class="col-md-2 col-sm-2 col-xs-12">
+							<select 
+								class="form-control ng-pristine ng-valid"
+								chosen="typeList" 
+								ng-model="type"
+								ng-options="t.name for t in typeList track by t.id"
+								ng-change="ctrl.getType(type.typeDescription)"
+								allow-single-deselect="true">
+								<option/>
+							</select>
+						</div>
+									
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<input type="text" class="form-control" ng-model="outside.type">
+						</div>									
+									
+					</div>
+				</form>
+			</div>	
+
+
+
+<h3>List Of Recent Visitors</h3>:
+<ul>
+    <li ng-Repeat="user in users">{{user.firstName + ' ' + user.lastName}}</li>
+</ul>
+<div ng-footer></div>
+
+
